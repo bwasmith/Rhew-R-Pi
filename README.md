@@ -1,6 +1,6 @@
 #Environmental Sensor DataLogging using Raspberry Pi
-######By Brendan Smith and Dr. Julian Deventer  
-Under Dr. Robert Rhew's Atmospheric Biogeochemistry lab at UC Berkeley
+By Brendan Smith and Dr. Julian Deventer  
+Under Dr. Robert Rhew's Atmospheric Biogeochemistry lab at UC Berkeley    
 
 _Please note:_  
 This page is maintained by someone of intermediate technical expertise, please help contribute!  
@@ -11,7 +11,7 @@ Inspired by the Maker Movement and with the emergence of low cost technologies l
 
 This project walks through setting up devices, creating simple sensor readers, and storage of information.  
 
-Much of the information provided was not created, is merely a helpful aggregation of sample projects and data sheets to aid with re-creating a project or serve as a reference. 
+Much of the information provided was not created, it is merely a helpful aggregation of sample projects and data sheets to aid with re-creating a project or serve as a reference. 
 
 Raspberry Pi code is written as Python scripts. 
 
@@ -20,6 +20,6 @@ Raspberry Pi code is written as Python scripts.
 - Getting started with GPIO
 - Connecting Arduino to Rasp-Pi
 - Connecting ADC to Rasp-Pi
-- Environmental sensors 
+- Environmental Sensors
 - Storing data
 - RhewLab project
