@@ -1,6 +1,6 @@
 #Setting up Raspberry Pi
 
-Great, so now you have got a Raspberry Pi. Lets get it going. 
+Great, now you have got a Raspberry Pi. Lets get it going. 
 
 <img src="https://cdn2.peterdavehello.org/wp-content/uploads/2016/02/Raspberry-Pi-3-Model-B-Diagram-from-RS.png" height="475" width="660"><sup>[1]</sup>
 ##General Notes
@@ -21,7 +21,7 @@ You can purchase a SD card with Noobs installed, or you can follow [these instru
 After, insert the SD card to the bottom of the Raspberry Pi, connect HDMI, a mouse, and a keyboard, then power it on. 
 
 You should see:   
-<img src="./sample_noobs.png"/ style="width: 650; height: 481">
+<img src=./sample_noobs.png width=500; height=370>
 
 
 Continue through and your Raspberry Pi should be up and running.
@@ -29,14 +29,14 @@ Continue through and your Raspberry Pi should be up and running.
 ##Basic Setup
 Keyboard and local time needs to be set up following installation.
 
-Open the terminal (
+Open the terminal 
 
     sudo raspi-config
 
-####Keyboard
+###Keyboard
 Please see [**here**](https://thepihut.com/blogs/raspberry-pi-tutorials/25556740-changing-the-raspberry-pi-keyboard-layout) for full instructions and associated pictures
 
-####Timezone and Clock
+###Timezone and Clock
 1. Navigate to "Internationalisation Options"
 2. "Change Timezone"
 3. Then select country and city
@@ -45,18 +45,18 @@ Please see [**here**](https://thepihut.com/blogs/raspberry-pi-tutorials/25556740
 ##Connecting to the internet
 This was a headache for me, hopefully it will not be for you. 
 
-Connecting is straightforward if you have a wired connection with standard DHCP or if you have a standard "select network, enter password" Wifi (see: [WPA-Personal](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA_terminology)).
+Connecting is straightforward if you have a standard wired connection or "select network, enter password" Wifi (see: [WPA-Personal](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA_terminology)).
 
-Things get more complicated if you have a static IP or are trying to connect on Airbears2. 
+Things are more complicated if you have a static IP or are trying to connect on Airbears2. 
 
 **_DO NOT_** change your **/etc/network/interfaces** file. Forum help for this is for older versions and should be unnecessary.
 
-####Standard Connection
+###Standard Connection
 1. Click network button in top right corner
 2. Select your network  
 3. Enter password if necessary
 
-####Ethernet with a Static IP address
+###Ethernet with a Static IP address
 You will need an IP address, a subnet mask, a router/gateway, a DNS server, and a domain.
 
 1. _Right click_ network button in top right corner
@@ -70,9 +70,9 @@ Here is an example:
 
 _NOTE: If your subnet mask looks like: "255.255.255.xxx". we will need to convert to CIDR notation. Please use [this tool](http://www.subnet-calculator.com/cidr.php) and paste the CIDR notation address._
 
-####WPA-Enterprise (Airbears2, UC Berkeley’s campus wifi)
+###WPA-Enterprise (Airbears2, UC Berkeley’s campus wifi)
 Airbears2 poses a different challenge. To log in, a username and password is required.  
-To connect, we will need to modify a network configuration file. The internet recommends to set up Wifi on an Android phone, and copy/paste the created configuration file.  
+To connect, we will need to modify a network configuration file. The internet recommends to set up Wifi on an Android phone, and copy/paste the created configuration file. For convenience, I have included sample config file. 
 
 Open the file with:
 
@@ -80,8 +80,11 @@ Open the file with:
 
 And add the following:  
 
-<img src=./annotated_wpa_supplicant.png width="900" height="489">
+<img src=./annotated_wpa_supplicant.png width="500" height="271">
 
+Double check your file, then "ctrl + X" to exit, "y" to save, "enter" to save.  
+
+Restart your Pi to reload network changes.
 
 ##Once Connected to the Internet
 Run 
