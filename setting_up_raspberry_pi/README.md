@@ -21,7 +21,7 @@ You can purchase a SD card with Noobs installed, or you can follow [these instru
 After, insert the SD card to the bottom of the Raspberry Pi, connect HDMI, a mouse, and a keyboard, then power it on. 
 
 You should see:   
-<img src="./sample_noobs.png"/ style="width: 600; height: 444">
+<img src="./sample_noobs.png"/ style="width: 650; height: 481">
 
 
 Continue through and your Raspberry Pi should be up and running.
@@ -80,7 +80,7 @@ Open the file with:
 
 And add the following:  
 
-<img src=./annotated_wpa_supplicant.png width="700" height="350">
+<img src=./annotated_wpa_supplicant.png width="900" height="489">
 
 
 ##Once Connected to the Internet
