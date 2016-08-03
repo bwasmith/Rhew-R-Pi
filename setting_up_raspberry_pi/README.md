@@ -98,5 +98,8 @@ You can install any application  using
 
     sudo apt-get install _______
 
+##Helpful Resources:
+[SSH'ing to Raspberry Pi](https://www.raspberrypi.org/documentation/remote-access/ssh/)
+
 ####References
 <sup>[1]</sup>[Raspberry Pi 3 diagram](http://docs-europe.electrocomponents.com/webdocs/14ba/0900766b814ba685.pdf) from [RS online Raspberry Pi 3 page](http://uk.rs-online.com/web/p/processor-microcontroller-development-kits/8968660/)
