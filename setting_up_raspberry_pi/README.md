@@ -1,12 +1,12 @@
 #Setting up Raspberry Pi
 
-Great, now you have got a Raspberry Pi. Lets get it going. 
+Great, now you have a Raspberry Pi. Lets get it going. 
 
 <img src="https://cdn2.peterdavehello.org/wp-content/uploads/2016/02/Raspberry-Pi-3-Model-B-Diagram-from-RS.png" height="475" width="660"><sup>[1]</sup>
 ##General Notes
-A case on the Pi will prevent the metal pins on the bottom from resting on a conductive surface.
+A case on the Pi will prevent the bottom, metal pins from resting on a conductive surface.
 
-You will need a 5V power supply that can support ~2.5A of current. You can expect your Pi to take between 1-2A at all times depending on the computer's load. 
+You will need a 5V power supply that can support ~2A of current. You can expect your Pi to take between 1-2A depending on the computer's load. 
 
 ##Heat Sinks
 [Here](https://www.flickr.com/photos/ultrapurple/16484032956) is an image of why you might want a heat sink. If you do not have them, you should be all right.
@@ -24,12 +24,12 @@ You should see:
 <img src=./sample_noobs.png width=500; height=370>
 
 
-Continue through and your Raspberry Pi should be up and running.
+Continue through the Noobs application and your Raspberry Pi should be up and running.
 
 ##Basic Setup
 Keyboard and local time needs to be set up following installation.
 
-Open the terminal 
+Open a terminal, and 
 
     sudo raspi-config
 
@@ -49,7 +49,7 @@ Connecting is straightforward if you have a standard wired connection or "select
 
 Things are more complicated if you have a static IP or are trying to connect on Airbears2. 
 
-**_DO NOT_** change your **/etc/network/interfaces** file. Forum help for this is for older versions and should be unnecessary.
+**_DO NOT_** change your **/etc/network/interfaces** file. Forum help for changing this file is for older versions of Rasbian and should be unnecessary.
 
 ###Standard Connection
 1. Click network button in top right corner
@@ -57,6 +57,8 @@ Things are more complicated if you have a static IP or are trying to connect on 
 3. Enter password if necessary
 
 ###Ethernet with a Static IP address
+Note, most ethernet connections will work without these instructions.
+
 You will need an IP address, a subnet mask, a router/gateway, a DNS server, and a domain.
 
 1. _Right click_ network button in top right corner
