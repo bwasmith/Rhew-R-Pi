@@ -3,6 +3,8 @@ import math
 import csv
 import os.path
 
+from gpiozero import LED
+
 #import datetime
 from datetime import datetime
 
@@ -20,6 +22,8 @@ now = datetime.now()
 date_string = now.date().strftime("%Y_%m_%d")
 
 DELAY_INTERVAL = 5
+led = LED(17) #Blue wire, designated for LED
+led_on = False
 #sensors
 dht_sensor = Adafruit_DHT.DHT22
 dht_pin = 4
@@ -57,17 +61,28 @@ while True:
 
     #sensor1 
     humidity, temperature = Adafruit_DHT.read_retry(dht_sensor, dht_pin)
-    new_log.append(temperature)
-    new_log.append(humidity)
+    new_log.append("{:0.1f}".format(temperature))
+    new_log.append("{:0.1f}".format(humidity))
     
     #sensor2
     potentiometer_output = adc.read_adc(potentiometer_adc_pin, adc_gain)
     millivolts = steps_to_millivolts(potentiometer_output, 4.096, adc_gain, math.pow(2, 15))
-    new_log.append(millivolts)
+    new_log.append("{:0.6f}".format(millivolts))
     
     #write results to log
     with open(file_name, 'a') as data_log:
         logwriter = csv.writer(data_log)
         logwriter.writerow(new_log)
     print "Wrote Log: ", new_log
-    sleep (DELAY_INTERVAL)
+
+    #split the delay into many 1 second intervals
+    #toggle the led every second
+    for i in range(DELAY_INTERVAL):
+        if led_on:
+            led.off()
+            led_on = False
+        else:
+            led.on()
+            led_on = True
+        
+        sleep(1)
