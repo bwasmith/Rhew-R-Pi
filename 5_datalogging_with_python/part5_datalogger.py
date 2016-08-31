@@ -16,8 +16,9 @@ data_name = 'dht_logs'
 #todays date
 now = datetime.now()
 date_string = now.date().strftime("%Y_%m_%d")
-#sensor list
-sensor_names = ["DHT22"]
+
+DELAY_INTERVAL = 5
+#sensors
 dht_sensor = Adafruit_DHT.DHT22
 dht_pin = 4
 
@@ -53,18 +54,4 @@ while True:
         logwriter = csv.writer(data_log)
         logwriter.writerow(new_log)
     print "Wrote Log: ", new_log
-    sleep (5)
-
-#if new, append header 
-    #date, sensor list
-
-#start appending sensor data
-    #toappend object
-
-    #pull date
-    #format time
-    #sensor 1
-    #sensor 2
-
-
-
+    sleep (DELAY_INTERVAL)
