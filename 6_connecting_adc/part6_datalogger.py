@@ -61,13 +61,13 @@ while True:
 
     #sensor1 
     humidity, temperature = Adafruit_DHT.read_retry(dht_sensor, dht_pin)
-    new_log.append(":0.1f").format(temperature))
-    new_log.append(":0.1f").format(humidity))
+    new_log.append("{:0.1f}".format(temperature))
+    new_log.append("{:0.1f}".format(humidity))
     
     #sensor2
     potentiometer_output = adc.read_adc(potentiometer_adc_pin, adc_gain)
     millivolts = steps_to_millivolts(potentiometer_output, 4.096, adc_gain, math.pow(2, 15))
-    new_log.append(":0.6f").format(millivolts))
+    new_log.append("{:0.6f}".format(millivolts))
     
     #write results to log
     with open(file_name, 'a') as data_log:
