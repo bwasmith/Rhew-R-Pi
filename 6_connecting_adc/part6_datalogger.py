@@ -23,8 +23,14 @@ dht_sensor = Adafruit_DHT.DHT22
 dht_pin = 4
 
 adc = Adafruit_ADS1x15.ADS1115()
-adc_gain = 16 #1-16, powers of 2. programmable gain, see datasheet for more info
+adc_gain = 16 #1->16, powers of 2. programmable gain, see datasheet for more info
 potentiometer_adc_pin = 3
+
+def steps_to_millivolts(adc_output, volt_range, gain, num_steps):
+  volts_per_step = volt_range * (1.0 / gain) * (1.0 / num_steps)
+  millivolt_equivalent = adc_output * volts_per_step
+  return millivolt_equivalent
+
 
 #create total file path (with date)
 file_name = data_path + '/' + date_string + '_' + data_name
@@ -53,8 +59,8 @@ while True:
     new_log.append(humidity)
     
     #sensor2
-    potentiometer_output = adc.read_adc(potentiomter_adc_pin, adc_gain)
-    millivolts = steps_to_millivolts(potentiometer_output, 4.096, adc_gain, math.pow(2, 15)
+    potentiometer_output = adc.read_adc(potentiometer_adc_pin, adc_gain)
+    millivolts = steps_to_millivolts(potentiometer_output, 4.096, adc_gain, math.pow(2, 15))
     new_log.append(millivolts)
     
     #write results to log
@@ -63,8 +69,3 @@ while True:
         logwriter.writerow(new_log)
     print "Wrote Log: ", new_log
     sleep (5)
-
-def steps_to_millivolts(adc_output, volt_range, gain, num_steps):
-  volts_per_step = volt_range * (1.0 / gain) * (1.0 / num_steps)
-  millivolt_equivalent = adc_output * volts_per_step
-  return millivolt_equivalent
