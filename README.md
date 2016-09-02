@@ -37,4 +37,3 @@ Raspberry Pi code is written as Python scripts.
 - Adafruit Breakout: [SHT31-D Temperature and Humidity](https://www.adafruit.com/products/2857)
 - Decagon [EC-5 Soil Moisture](https://www.decagon.com/en/soils/volumetric-water-content-sensors/ec-5-lowest-cost-vwc/)
 - 
-## Howdy
