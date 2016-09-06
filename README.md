@@ -1,4 +1,6 @@
 #Environmental Sensor DataLogging using Raspberry Pi
+<img src="https://github.com/bwasmith/Rhew-R-Pi/blob/master/finished_without_encasing.png" width="400">
+
 By Brendan Smith and Dr. Julian Deventer  
 Under Dr. Robert Rhew's Trace Gas Biogeochemistry Lab at UC Berkeley    
 
