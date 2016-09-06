@@ -1,6 +1,6 @@
 #Environmental Sensor DataLogging using Raspberry Pi
 By Brendan Smith and Dr. Julian Deventer  
-Under Dr. Robert Rhew's Atmospheric Biogeochemistry lab at UC Berkeley    
+Under Dr. Robert Rhew's Trace Gas Biogeochemistry Lab at UC Berkeley    
 
 _Please note:_  
 This page is maintained by someone of intermediate technical expertise, please help contribute!  
@@ -15,14 +15,9 @@ Much of the information provided was not created, it is merely a helpful aggrega
 
 Raspberry Pi code is written as Python scripts. 
 
-##Directories
-1. [Setting up the Raspberry Pi](https://github.com/bwasmith/Rhew-R-Pi/wiki/Setting-up-Raspberry-Pi)
-2. [Getting started with GPIO](https://github.com/bwasmith/Rhew-R-Pi/wiki/Getting-started-with-GPIO)
-3. Temperature and Humidity Sensing over I2C
-4. Data Logging in Python
-5. ADC with Rasp-pi
-6. RhewLab Project
- 
+##Instructions for Creation
+Please see [our wiki](https://github.com/bwasmith/Rhew-R-Pi/wiki) for detailed instructions for recreation. 
+
 ##Main Supplies  
 ####Hardware  
 - Raspberry Pi 3
@@ -34,6 +29,5 @@ Raspberry Pi code is written as Python scripts.
 
 ####Sensors  
 - Kipp and Zonen [PAR Quantum Sensor](http://www.kippzonen.com/Product/184/PQS-1-PAR-Quantum-Sensor)
-- Adafruit Breakout: [SHT31-D Temperature and Humidity](https://www.adafruit.com/products/2857)
+- [DHT22 Temperature and Humidity](https://www.adafruit.com/product/385)
 - Decagon [EC-5 Soil Moisture](https://www.decagon.com/en/soils/volumetric-water-content-sensors/ec-5-lowest-cost-vwc/)
-- 
