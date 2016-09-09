@@ -5,7 +5,7 @@ import Adafruit_ADS1x15
 import Adafruit_DHT
 
 '''
-This is an end to end communication channel of the Raspberry Pi with the Adafruit's ADS1015 12-bit ADC. 
+This is an end to end communication channel of the Raspberry Pi with the Adafruit's ADS1015 ***12-bit*** ADC. 
 
 Environmental sensors used are the: 
 
