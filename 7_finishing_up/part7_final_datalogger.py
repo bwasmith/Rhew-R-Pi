@@ -20,8 +20,8 @@ import Adafruit_DHT
 import Adafruit_ADS1x15
 
 #LOCAL VARIABLES
-data_path = '/home/pi/Documents/env_datalogs' #data directory path
-data_name = 'dht_logs' #data file name
+DATA_PATH = '/home/pi/Documents/env_datalogs' #data directory path
+DATA_NAME = 'dht_logs' #data file name
 
 now = datetime.now() #todays date
 date_string = now.date().strftime("%Y_%m_%d")
@@ -33,11 +33,11 @@ led_on = False
 
 #Sensor Variables
 dht_sensor = Adafruit_DHT.DHT22
-dht_pin = 4
+DHT_PIN = 4
 
 adc = Adafruit_ADS1x15.ADS1115()
-adc_gain = 16 #1->16, powers of 2. programmable gain, see datasheet for more info
-potentiometer_adc_pin = 3
+ADC_GAIN = 16 #1->16, powers of 2. programmable gain, see datasheet for more info
+POTENTIOMETER_ADC_PIN = 3
 
 #Helper function to convert ADC output back into original voltage signal
 def steps_to_millivolts(adc_output, volt_range, gain, num_steps):
@@ -46,7 +46,7 @@ def steps_to_millivolts(adc_output, volt_range, gain, num_steps):
   return millivolt_equivalent
 
 #create total file path (with date)
-file_name = data_path + '/' + date_string + '_' + data_name
+file_name = DATA_PATH + '/' + date_string + '_' + DATA_NAME
 
 #if the file does not already exist, create a new file with csv headers
 if not os.path.isfile(file_name):
@@ -67,14 +67,14 @@ while True:
     new_log.append(time_string)
 
     #sensor1 
-    humidity, temperature = Adafruit_DHT.read_retry(dht_sensor, dht_pin)
+    humidity, temperature = Adafruit_DHT.read_retry(dht_sensor, DHT_PIN)
     new_log.append("{:0.1f}".format(temperature))
     new_log.append("{:0.1f}".format(humidity))
     
     #sensor2
-    potentiometer_output = adc.read_adc(potentiometer_adc_pin, adc_gain)
-    millivolts = steps_to_millivolts(potentiometer_output, 4.096, adc_gain, math.pow(2, 15))
-    new_log.append("{:0.6f}".format(millivolts))
+    potentiometer_output = adc.read_adc(POTENTIOMETER_ADC_PIN, ADC_GAIN)
+    potentiometer_millivolts = steps_to_millivolts(potentiometer_output, 4.096, ADC_GAIN, math.pow(2, 15))
+    new_log.append("{:0.6f}".format(potentiometer_millivolts))
     
     #write results to log
     with open(file_name, 'a') as data_log:
