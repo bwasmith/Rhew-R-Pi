@@ -6,6 +6,8 @@ Intended to be run on a Raspberry Pi with different sensors connected. Writes to
 Dependencies for sensors:
 - Adafruit_DHT
 - Adafruit_ADS1x15.
+
+Currently collects data from PAR sensor, DHT temp and humidity, and a Potentiometer reading. 
 '''
 
 from time import sleep
