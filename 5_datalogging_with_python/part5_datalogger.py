@@ -8,11 +8,11 @@ from datetime import datetime
 #import sensors
 import Adafruit_DHT
 
-#LOCAL VARIABLES
+#VARIABLES
 #data directory path
-data_path = '/home/pi/Documents/env_datalogs'
+DATA_PATH = '/home/pi/Documents/env_datalogs'
 #data file name
-data_name = 'dht_logs'
+DATA_NAME = 'dht_logs'
 #todays date
 now = datetime.now()
 date_string = now.date().strftime("%Y_%m_%d")
@@ -23,7 +23,7 @@ dht_sensor = Adafruit_DHT.DHT22
 dht_pin = 4
 
 #create total file path (with date)
-file_name = data_path + '/' + date_string + '_' + data_name
+file_name = DATA_PATH + '/' + date_string + '_' + DATA_NAME
 
 #if the file does not already exist, create a new file with headers
 if not os.path.isfile(file_name):
